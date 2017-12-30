@@ -3,6 +3,8 @@ import {Link, withRouter} from 'react-router-dom'
 import {login} from '../utils/xhr'
 import { connect } from 'react-redux'
 
+import MainLogo from '../css/logo_big.png'
+
 class LoginPage extends Component {
 
     constructor(props) {
@@ -15,22 +17,29 @@ class LoginPage extends Component {
         }
     }
 
+    /**
+     * Set input values to state
+     *
+     * @param element
+     * @param event
+     */
     changeInput = (element, event) => {
         this.setState({[element]: event.target.value})
     }
 
+    /**
+     * Render
+     *
+     * @returns {XML}
+     */
     render() {
         const {history} = this.props
 
         return (
-            <div>
-                <h1>Login Page</h1>
-                <p>
-                    For this example application, we cannot visit <Link to="/app">/app</Link> until we are logged in.
-                    Clicking the "Login" button will simulate a login by setting Redux state. This example compliments
-                    the CSS-Tricks article I wrote for <a target="_blank" href="https://css-tricks.com/react-router-4/">React
-                    Router 4</a>.
-                </p>
+            <div className="login-page">
+                <div>
+                    <img src={MainLogo} alt="Skynet" />
+                </div>
                 {this.props.message}
                 <form>
                     <input type="text"
@@ -47,9 +56,9 @@ class LoginPage extends Component {
 
                 <button onClick={() => {
                     login({email: this.state.email, password: this.state.password}).then(() => {
-                        history.push('/app')
+                        history.push('/admin')
                     })
-                }}>Login
+                }}>Přihlásit se
                 </button>
             </div>
         )

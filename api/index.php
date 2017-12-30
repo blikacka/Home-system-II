@@ -28,9 +28,8 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $rout
 		list ($httpMethod, $url) = explode('|', $type);
 		$route->addRoute($httpMethod, getUriUrl($uri, $url), $method);
 	}
-//	$route->addRoute('POST', '/user/{id:\d+}', 'get_user_handler');
-//	$route->addRoute('GET', '/articles/{id:\d+}[/{title}]', 'get_article_handler');
 });
+
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 switch ($routeInfo[0]) {
 	case FastRoute\Dispatcher::NOT_FOUND:

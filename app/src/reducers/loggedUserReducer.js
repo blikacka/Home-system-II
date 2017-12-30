@@ -1,3 +1,5 @@
+import qs from 'qs'
+
 const initialState = {
     pending: true,
     logged: false,
@@ -9,7 +11,9 @@ const loggedUserReducer = (state = initialState, action) => {
 
     if (action.type === 'GET_LOGGED_USER') {
         return Object.assign({}, state, {
-            pending: false
+            pending: false,
+            logged: action.isLogged,
+            user: action.user
         })
     }
 
@@ -17,7 +21,8 @@ const loggedUserReducer = (state = initialState, action) => {
         return Object.assign({}, state, {
             pending: false,
             logged: action.logged,
-            user: action.user
+            user: action.user,
+            loggedUser: sessionStorage.setItem('loggedUser', action.user.hash)
         })
     }
 

@@ -1,28 +1,135 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Arial';
+  margin: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.primary-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border-bottom: 1px solid #dedede;
+  padding: 10px 10px;
+  background: #eee;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.primary-header h1 {
+  font-size: 14px;
+  margin-right: 10px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.primary-header nav button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
-.App-intro {
-  font-size: large;
+.primary-header nav a, .primary-header nav button {
+  font-size: 14px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.primary-header nav a, .primary-header nav button:not(:last-of-type) {
+  border-right: 1px solid black;
+}
+
+/*.primary-header nav a.active, .primary-header nav button.active {*/
+  /*border-bottom: 1px solid #878787;*/
+/*}*/
+
+.primary-header nav a:hover, .primary-header nav button:hover {
+  opacity: 0.8;
+  background: #c7c7c7;
+}
+
+.primary-layout {
+
+}
+
+.charts-page {
+  padding: 20px 10px 10px 10px;
+}
+
+.control-page {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.control-page button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.control-page button {
+  padding: 10px;
+  margin: 2px;
+  border: 1px solid #dedede;
+  border-radius: 3px;
+}
+
+.control-page button:hover {
+  background: #dedede;
+}
+
+.login-page form {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.login-page, .login-page div {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.login-page img {
+    width: 100%;
+    max-width: 640px;
+}
+
+.login-page input, .login-page button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.login-page input {
+    width: 100%;
+}
+
+.login-page button {
+    width: 80%;
+}
+
+.login-page input, .login-page button {
+    border: 1px solid #dedede;
+    border-radius: 3px;
+    margin: 2px 0;
+    padding: 10px;
 }

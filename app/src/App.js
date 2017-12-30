@@ -13,7 +13,7 @@ const App = props => (
             <div>
                 <Switch>
                     <Route path="/auth" component={UnauthorizedLayout} />
-                    <AuthorizedRoute path="/app" component={PrimaryLayout} />
+                    <AuthorizedRoute path="/admin" component={PrimaryLayout} />
                     <Redirect to="/auth" />
                 </Switch>
             </div>
